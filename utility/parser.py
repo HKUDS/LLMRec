@@ -1,12 +1,11 @@
 import argparse
 
 
-
 #---LLMAug netflix---------------------------------------------------------------------------------------------------------------------------
 def parse_args():
     parser = argparse.ArgumentParser(description="")
 
-    parser.add_argument('--data_path', nargs='?', default='/home/ww/FILE_from_ubuntu18/Code/work10/data/', help='Input data path.')  
+    parser.add_argument('--data_path', nargs='?', default='/home/weiw/Code/LLMs/data/', help='Input data path.')  
     parser.add_argument('--seed', type=int, default=2022, help='Random seed')
     parser.add_argument('--dataset', nargs='?', default='netflix_valid_item', help='Choose a dataset from {preprocessed_raw_MovieLens netflix_valid_item}')
     parser.add_argument('--verbose', type=int, default=5, help='Interval of evaluation.')
@@ -40,7 +39,7 @@ def parse_args():
     parser.add_argument('--layers', type=int, default=1, help='Number of item graph conv layers')  
     parser.add_argument('--drop_rate', type=float, default=0.0, help='dropout rate')
     parser.add_argument('--mask_rate', type=float, default=0.1, help='mask_rate')   
-    parser.add_argument('--user_cat_rate', type=float, default=2.3, help='user_cat_rate')  # 2.3 to 2.8
+    parser.add_argument('--user_cat_rate', type=float, default=2.8, help='user_cat_rate')
     parser.add_argument('--item_cat_rate', type=float, default=0.005, help='item_cat_rate')
     parser.add_argument('--model_cat_rate', type=float, default=0.02, help='model_cat_rate')
     parser.add_argument('--ID_layers', type=int, default=1, help='Number of item graph conv layers')  
@@ -64,7 +63,7 @@ def parse_args():
 # def parse_args():
 #     parser = argparse.ArgumentParser(description="")
 
-#     parser.add_argument('--data_path', nargs='?', default='/home/ww/FILE_from_ubuntu18/Code/work10/data/', help='Input data path.')  #/home/weiw/Code/MM/MICRO2Ours/data/       /home/weiw/Datasets/MM/LATTICE/
+#     parser.add_argument('--data_path', nargs='?', default='/home/weiw/Code/LLMs/data/', help='Input data path.')  #/home/weiw/Code/MM/MICRO2Ours/data/       /home/weiw/Datasets/MM/LATTICE/
 #     parser.add_argument('--seed', type=int, default=2022, help='Random seed')
 #     parser.add_argument('--dataset', nargs='?', default='preprocessed_raw_MovieLens', help='Choose a dataset from {preprocessed_raw_MovieLens, netflix_valid_item}')
 #     parser.add_argument('--verbose', type=int, default=5, help='Interval of evaluation.')
@@ -82,13 +81,13 @@ def parse_args():
 #     parser.add_argument('--norm_type', nargs='?', default='sym', help='Adjacency matrix normalization operation') 
 #     parser.add_argument('--gpu_id', type=int, default=0, help='GPU id')
 #     parser.add_argument('--Ks', nargs='?', default='[10, 20, 50]', help='K value of ndcg/recall @ k')
-    #   parser.add_argument('--test_flag', nargs='?', default='part', help='Specify the test type from {part, full}, indicating whether the reference is done in mini-batch')
+#     parser.add_argument('--test_flag', nargs='?', default='part', help='Specify the test type from {part, full}, indicating whether the reference is done in mini-batch')
 
 
 #     parser.add_argument('--sc', type=float, default=1.0, help='GCN self connection')
 #     parser.add_argument('--model_cat_rate', type=float, default=0.02, help='model_cat_rate')
 #     parser.add_argument('--feat_reg_decay', default=1e-5, type=float, help='feat_reg_decay') 
-    # parser.add_argument('--cf_model', nargs='?', default='lightgcn', help='Downstream Collaborative Filtering model {mf, ngcf, lightgcn, mmgcn, vbpr, hafr, bm3}')   
+#     parser.add_argument('--cf_model', nargs='?', default='lightgcn', help='Downstream Collaborative Filtering model {mf, ngcf, lightgcn, mmgcn, vbpr, hafr, bm3}')   
 
 
 #     parser.add_argument('--isload', default=False , type=bool, help='whether load model')  #
@@ -112,7 +111,7 @@ def parse_args():
 
 #     # loss
 #     parser.add_argument('--aug_mf_rate', type=float, default=0.012, help='aug_mf_rate')      # 
-#     parser.add_argument('--prune_loss_drop_rate', type=float, default=0.71, help='prune_loss_drop_rate')   # to tune 
+#     parser.add_argument('--prune_loss_drop_rate', type=float, default=0.4, help='prune_loss_drop_rate')   # to tune 
 #     parser.add_argument('--mm_mf_rate', type=float, default=0, help='mm_mf_rate')      # 
 #     parser.add_argument('--feat_loss_type', default="sce", type=str, help='feat_loss_type')  # to tune
 #     parser.add_argument('--att_re_rate', type=float, default=0.00001, help='att_re_rate')      # 
@@ -122,10 +121,3 @@ def parse_args():
 
 #     return parser.parse_args()
 # #---LLMAug movielens---------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
