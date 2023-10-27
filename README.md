@@ -1,6 +1,6 @@
 # LLMRec: Large Language Models with Graph Augmentation for Recommendation
 
-PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://wordpress.com/6924b90e-08ae-4958-815c-0a813c7852d6).
+PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024llmrec.pdf).
 
 
 
@@ -11,7 +11,7 @@ PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with G
 
 <a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
 <a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Demo-Page-purple'></a>
-<a href='https://wordpress.com/6924b90e-08ae-4958-815c-0a813c7852d6'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a> 
+<a href='https://llmrec.files.wordpress.com/2023/10/wsdm2024llmrec.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a> 
 [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/channel/UC1wKlPPlP9zKGYk62yR0K_g)
 
 
@@ -33,7 +33,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 - [x] [2023.10.27] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
 
-- [x] [2023.10.27] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://wordpress.com/6924b90e-08ae-4958-815c-0a813c7852d6).
+- [x] [2023.10.27] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024llmrec.pdf).
 
 - [x] [2023.10.27] 🚀🚀 Release the code of LLMRec.
 
