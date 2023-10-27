@@ -84,29 +84,18 @@ Supported datasets:  `netflix`, `movielens`
 
 We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc. 
 
-<-- <p align="center">
-<img src="./image/llmrec_framework.png" alt="LLMRec" />
-<img src="./image/textual_data1.png" alt="LLMRec" />
-<img src="./image/textual_data2.png" alt="LLMRec" />
-<img src="./image/textual_data3.png" alt="LLMRec" />
-</p> -->
+<div style="display: flex; justify-content: center;">
+  <figure style="margin: 10px;">
+    <img src="./image/textual_data1.png" alt="Image 1" style="width:300px;height:200px;">
+    <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
+  </figure>
 
-![Textual data in original 'Netflix Prize Data' on Kaggle.](./image/textual_data1.png)
-![Textual data in original 'Netflix Prize Data'](./image/textual_data2.png)
-![LLM-augmented textual data](./image/textual_data3.png)
+  <figure style="margin: 10px;">
+    <img src="./image/textual_data2.png" alt="Image 2" style="width:300px;height:200px;">
+    <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption>
+  </figure>  
+</div>
 
-<figure>
-  <img src="./image/textual_data1.png" alt="Image Alt Text" style="width:300px;height:200px;">
-  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
-</figure>
-<figure>
-  <img src="./image/textual_data2.png" alt="Image Alt Text" style="width:300px;height:200px;">
-  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
-</figure>
-<figure>
-  <img src="./image/textual_data3.png" alt="Image Alt Text" style="width:300px;height:200px;">
-  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
-</figure>
 
 
 
