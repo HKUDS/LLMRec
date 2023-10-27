@@ -45,19 +45,6 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 ```
 pip install -r requirments.txt
 ```
-```shell
-
-
-# Torch with CUDA 11.7
-pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
-# To support vicuna base model
-pip3 install "fschat[model_worker,webui]"
-# Clone our GraphGPT
-git clone https://github.com/HKUDS/GraphGPT.git
-cd GraphGPT
-# Install required libaries
-pip install -r requirements.txt
-```
 
 
 <h2>Usage </h2>
@@ -65,7 +52,6 @@ pip install -r requirements.txt
 <h4>Stage 1: LLM-based Data Augmentation</h4>
 
 ```
-
 cd LLMRec/LLM_augmentation/
 python ./try_gpt_ui_aug.py
 python ./try_gpt_user_profiling.py
