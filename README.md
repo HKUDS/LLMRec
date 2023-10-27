@@ -1,6 +1,6 @@
 # LLMRec: Large Language Models with Graph Augmentation for Recommendation
 
-PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation]([https://arxiv.org/pdf/2302.10632.pdf](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf)).
+PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
 
 <p align="center">
 <img src="./llmrec_framework.png" alt="LLMRec" />
