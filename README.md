@@ -80,6 +80,8 @@ Supported datasets:  `netflix`, `movielens`
   ```
 
 <h4> Orinigal Datasets </h4>
+🌹🌹 Please cite our paper if you use the 'netflix' dataset~ 
+
 
 | Dataset       | Netflix |                             | MovieLens                                |
 |---------------|---------|-----------------------------|------------------------------------------|
