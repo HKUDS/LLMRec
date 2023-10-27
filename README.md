@@ -3,18 +3,16 @@
 PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
 
 
-📢📢 
 
 [Wei Wei](#), [Xubin Ren](https://rxubin.com/), [Jiabin Tang](https://tjb-tech.github.io/), [Qingyong Wang](#), [Lixin Su](#), [Suqi Cheng](#), [Junfeng Wang](#), [Dawei Yin](https://www.yindawei.com/) and [Chao Huang](https://sites.google.com/view/chaoh/home)*.
 (*Correspondence)
 
 **[Data Intelligence Lab](https://sites.google.com/view/chaoh/home)@[University of Hong Kong](https://www.hku.hk/)**, Baidu Inc.
 
-
 <a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
-<a href='#'><img src='https://img.shields.io/badge/Demo-Page-purple'></a> 
-<a href='https://arxiv.org/abs/2310.13023'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a> 
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](#)
+<a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Demo-Page-purple'></a>
+<a href='https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a> 
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)]([#](https://www.youtube.com/channel/UC1wKlPPlP9zKGYk62yR0K_g))
 
 
 This repository hosts the code, original data and augmented data of **LLMRec**.
@@ -29,7 +27,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 
 
-## 🎉 News 
+## 🎉 News 📢📢  
 
 - [x] [2023.10.27]🔥🔥 Release the script for constructing the prompt.
 
@@ -47,7 +45,19 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 ```
 pip install -r requirments.txt
 ```
+```shell
 
+
+# Torch with CUDA 11.7
+pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
+# To support vicuna base model
+pip3 install "fschat[model_worker,webui]"
+# Clone our GraphGPT
+git clone https://github.com/HKUDS/GraphGPT.git
+cd GraphGPT
+# Install required libaries
+pip install -r requirements.txt
+```
 
 
 <h2>Usage </h2>
@@ -55,6 +65,7 @@ pip install -r requirments.txt
 <h4>Stage 1: LLM-based Data Augmentation</h4>
 
 ```
+
 cd LLMRec/LLM_augmentation/
 python ./try_gpt_ui_aug.py
 python ./try_gpt_user_profiling.py
