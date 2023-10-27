@@ -3,17 +3,17 @@
 PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation]([https://arxiv.org/pdf/2302.10632.pdf](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf)).
 
 <p align="center">
-<img src="./LLMAug_framework_refine1.pdf" alt="MMSSL" />
+<img src="./llmrec_framework.png" alt="LLMRec" />
 </p>
 
-MMSSL is a new multimedia recommender system which integrates the generative modality-aware collaborative self-augmentation and the contrastive cross-modality dependency encoding. It achieves better performance than existing SOTA multi-model recommenders.
+LLMRec is a novel framework that enhances recommenders by applying three simple yet effective LLM-based graph augmentation strategies to recommendation system. LLMRec is to make the most of the content within online platforms (e.g., Netflix, MovieLens) to augment interaction graph by i) reinforcing u-i interactive edges, ii) enhancing item node attributes, and iii) conducting user node profiling, intuitively from the natural language perspective.
 
 
 <h2>Dependencies </h2>
 
-* Python >= 3.9.13
-* [Pytorch](https://pytorch.org/) >= 1.13.0+cu116
-* [dgl-cuda11.6](https://www.dgl.ai/) >= 0.9.1post1
+'''
+pip install -r requirments.txt
+'''
 
 
 
