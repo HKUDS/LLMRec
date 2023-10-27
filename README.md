@@ -12,7 +12,7 @@ PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with G
 <a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
 <a href='https://llmrec.github.io/'><img src='https://img.shields.io/badge/Demo-Page-purple'></a>
 <a href='https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf'><img src='https://img.shields.io/badge/Paper-PDF-orange'></a> 
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)]([#](https://www.youtube.com/channel/UC1wKlPPlP9zKGYk62yR0K_g))
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/channel/UC1wKlPPlP9zKGYk62yR0K_g)
 
 
 This repository hosts the code, original data and augmented data of **LLMRec**.
