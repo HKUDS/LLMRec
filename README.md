@@ -84,17 +84,19 @@ Supported datasets:  `netflix`, `movielens`
 
 We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc. 
 
-<div style="display: flex; justify-content: center;">
-  <figure style="margin: 10px;">
-    <img src="./image/textual_data1.png" alt="Image 1" style="width:300px;height:200px;">
+<div style="display: flex; justify-content: center; align-items: flex-start;">
+  <figure style="text-align: center; margin: 10px;">
+   <img src="./image/textual_data1.png" alt="Image 1" style="width:300px;height:200px;">
     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
   </figure>
 
-  <figure style="margin: 10px;">
+  <figure style="text-align: center; margin: 10px;">
     <img src="./image/textual_data2.png" alt="Image 2" style="width:300px;height:200px;">
     <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption>
-  </figure>  
+  </figure>
 </div>
+
+
 
 
 
