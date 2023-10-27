@@ -2,6 +2,9 @@
 
 PyTorch implementation for WSDM 2024 paper [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
 
+
+📢📢 
+
 [Wei Wei](#), [Xubin Ren](https://rxubin.com/), [Jiabin Tang](https://tjb-tech.github.io/), [Qingyong Wang](#), [Lixin Su](#), [Suqi Cheng](#), [Junfeng Wang](#), [Dawei Yin](https://www.yindawei.com/) and [Chao Huang](https://sites.google.com/view/chaoh/home)*.
 (*Correspondence)
 
@@ -28,23 +31,13 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 
 
-📢📢 We have made significant updates to the **models** and **data** used in our GraphGPT on 🤗 **Huggingface**. We highly recommend referring to the table below for further details: 
+- [x] [2023.10.27]🔥🔥 Release the script for constructing the prompt.
 
-| 🤗 Huggingface Address                                        | 🎯 Description                                                |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [huggingface.co/Jiabin99/GraphGPT-7B-mix-all](https://huggingface.co/Jiabin99/GraphGPT-7B-mix-all) | It's the checkpoint of our GraphGPT based on Vicuna-7B-v1.5 tuned on instruction data [Arxiv-PubMed-mix-NC-LP](https://huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP) |
-| [huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT](https://huggingface.co/Jiabin99/Arxiv-PubMed-GraphCLIP-GT) | It's the checkpoint of the pre-trained graph transformer (GT) trained on Arxiv and PubMed using Text-Graph grounding. |
-| [huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP](https://huggingface.co/datasets/Jiabin99/Arxiv-PubMed-mix-NC-LP) | This's the mixing instruction dataset with node classification (NC) and link prediction (LP) on Arxiv and PubMed. |
-| [huggingface.co/datasets/Jiabin99/GraphGPT-eval-instruction](https://huggingface.co/datasets/Jiabin99/GraphGPT-eval-instruction) | We release all instruction dataset for our evaluation.       |
-| [huggingface.co/datasets/Jiabin99/All_pyg_graph_data](https://huggingface.co/datasets/Jiabin99/All_pyg_graph_data) | We merge all utilized graph data.                            |
+- [x] [2023.10.27]🔥🔥 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
 
-- [x] [2023.10.26]🔥🔥Release our utilized Instruction data.
+- [x] [2023.10.27] 🚀🚀 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
 
-- [x] [2023.10.26]🔥🔥Release checkpoints of our GraphGPT and pre-trained graph encoder.
-
-- [x] [2023.10.23] 🚀🚀 The full paper of our GraphGPT is available at [https://arxiv.org/abs/2310.13023](https://arxiv.org/abs/2310.13023). Please check out it and give us more feedbacks! 
-
-- [x] [2023.10.15] 🚀🚀 Release the code of GraphGPT.
+- [x] [2023.10.27] 🚀🚀 Release the code of LLMRec.
 
 
 
