@@ -29,11 +29,11 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 📢📢  
 
-- [x] [2023.10.27]🔥🔥 Release the script for constructing the prompt.
+- [x] [2023.10.27] 🚀🚀 Release the script for constructing the prompt.
 
-- [x] [2023.10.27]🔥🔥 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
+- [x] [2023.10.27] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
 
-- [x] [2023.10.27] 🚀🚀 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
+- [x] [2023.10.27] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024_llmrec_large_language_models_with_graph_augmentation_for_recommendation.pdf).
 
 - [x] [2023.10.27] 🚀🚀 Release the code of LLMRec.
 
@@ -75,6 +75,9 @@ Supported datasets:  `netflix`, `movielens`
         ├── netflix/
         ...
   ```
+
+<h4> Orinigal Datasets </h4>
+
 | Dataset       | Netflix |                             | MovieLens                                |
 |---------------|---------|-----------------------------|------------------------------------------|
 | Graph         | Ori.    | U                           | I                                        |
@@ -85,6 +88,42 @@ Supported datasets:  `netflix`, `movielens`
 |               | Aug.    | U[1536]                     | age, gender, liked genre, disliked genre |
 |               |         | I[1536]                     | director, country, language              |
 | Modality      |         | Textual[768], Visiual [512] | Textual [768], Visiual [512]             |
+
+
+<h4> Augmented Datasets</h4>
+
+
+
+
+<h2> Prompt & Completion Example </h2>
+
+
+<h4> LLM-based Implicit Feedback Augmentation </h4>
+> Prompt 
+>> ...
+
+> Completion
+>> ...
+
+
+
+
+
+<h4> LLM-based User Profile Augmentation </h4>
+> Prompt 
+>> ...
+
+> Completion
+>> ...
+
+
+
+<h4> LLM-based Item Attributes Augmentation </h4>
+> Prompt 
+>> ...
+
+> Completion
+>> ...
 
 
 
