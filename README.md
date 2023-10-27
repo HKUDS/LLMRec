@@ -10,6 +10,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 
 <h2>Dependencies </h2>
+
 ```
 pip install -r requirments.txt
 ```
@@ -19,6 +20,7 @@ pip install -r requirments.txt
 <h2>Usage </h2>
 
 <h4>Stage 1: LLM-based Data Augmentation</h4>
+
 ```
 cd LLMRec/LLM_augmentation/
 python ./try_gpt_ui_aug.py
@@ -27,6 +29,7 @@ python ./try_gpt_i_attribute_generate_aug.py
 ```
 
 <h4>Stage 2: Recommender training with LLM-augmented Data</h4>
+
 ```
 cd LLMRec/
 python ./main.py --dataset {DATASET}
@@ -53,71 +56,6 @@ Supported datasets:  `netflix`, `movielens`
 |               |         | I[1536]                     | director, country, language              |
 | Modality      |         | Textual[768], Visiual [512] | Textual [768], Visiual [512]             |
 
-
-
-```
-# part of data preprocessing
-# #----json2mat--------------------------------------------------------------------------------------------------
-import json
-from scipy.sparse import csr_matrix
-import pickle
-import numpy as np
-n_user, n_item = 39387, 23033
-f = open('/home/weiw/Code/MM/MMSSL/data/clothing/train.json', 'r')  
-train = json.load(f)
-row, col = [], []
-for index, value in enumerate(train.keys()):
-    for i in range(len(train[value])):
-        row.append(int(value))
-        col.append(train[value][i])
-data = np.ones(len(row))
-train_mat = csr_matrix((data, (row, col)), shape=(n_user, n_item))
-pickle.dump(train_mat, open('./train_mat', 'wb'))  
-# # ----json2mat--------------------------------------------------------------------------------------------------
-
-
-# ----mat2json--------------------------------------------------------------------------------------------------
-# train_mat = pickle.load(open('./train_mat', 'rb'))
-test_mat = pickle.load(open('./test_mat', 'rb'))
-# val_mat = pickle.load(open('./val_mat', 'rb'))
-
-# total_mat = train_mat + test_mat + val_mat
-total_mat =test_mat
-
-# total_mat = pickle.load(open('./new_mat','rb'))
-# total_mat = pickle.load(open('./new_mat','rb'))
-total_array = total_mat.toarray()
-total_dict = {}
-
-for i in range(total_array.shape[0]):
-    total_dict[str(i)] = [index for index, value in enumerate(total_array[i]) if value!=0]
-
-new_total_dict = {}
-
-for i in range(len(total_dict)):
-    # if len(total_dict[str(i)])>1:
-    new_total_dict[str(i)]=total_dict[str(i)]
-
-# train_dict, test_dict = {}, {}
-
-# for i in range(len(new_total_dict)):
-#     train_dict[str(i)] = total_dict[str(i)][:-1]
-#     test_dict[str(i)] = [total_dict[str(i)][-1]]
-
-# train_json_str = json.dumps(train_dict)
-test_json_str = json.dumps(new_total_dict)
-
-# with open('./new_train.json', 'w') as json_file:
-# # with open('./new_train_json', 'w') as json_file:
-#     json_file.write(train_json_str)
-with open('./test.json', 'w') as test_file:
-# with open('./new_test_json', 'w') as test_file:
-    test_file.write(test_json_str)
-# ----mat2json--------------------------------------------------------------------------------------------------
-```
-
-
-<h2> Experimental Results </h2>
 
 
 <h1> Citing </h1>
