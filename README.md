@@ -40,7 +40,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 
 
-<h2>Dependencies </h2>
+<h2> Dependencies </h2>
 
 ```
 pip install -r requirments.txt
@@ -131,12 +131,19 @@ Supported datasets:  `netflix`, `movielens`
 
 <h2> Candidate Preparing for LLM-based Implicit Feedback Augmentation</h2>
   ```
-  # step 1: select base model such as MMSSL or LATTICE
-  # step 2: obtain user embedding and item embedding
-  # step 3: generate candidate
+  step 1: select base model such as MMSSL or LATTICE
+  step 2: obtain user embedding and item embedding
+  step 3: generate candidate
       _, candidate_indices = torch.topk(torch.mm(G_ua_embeddings, G_ia_embeddings.T), k=10)  
       pickle.dump(candidate_indices.cpu(), open('/home/ww/FILE_from_ubuntu18/Code/work10/data/netflix_valid_item/prepare_dataset4finetune/candidate_indices','wb'))
   ```
+
+
+
+
+<h2> Experimental Results </h2>
+
+
 
 
 
