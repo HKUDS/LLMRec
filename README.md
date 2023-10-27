@@ -95,6 +95,19 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 ![Textual data in original 'Netflix Prize Data'](./image/textual_data2.png)
 ![LLM-augmented textual data](./image/textual_data3.png)
 
+<figure>
+  <img src="./image/textual_data1.png" alt="Image Alt Text" style="width:300px;height:200px;">
+  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
+</figure>
+<figure>
+  <img src="./image/textual_data2.png" alt="Image Alt Text" style="width:300px;height:200px;">
+  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
+</figure>
+<figure>
+  <img src="./image/textual_data3.png" alt="Image Alt Text" style="width:300px;height:200px;">
+  <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption>
+</figure>
+
 
 
 | Dataset       | Netflix |                             | MovieLens                                |
