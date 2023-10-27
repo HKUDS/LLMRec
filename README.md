@@ -80,9 +80,9 @@ Supported datasets:  `netflix`, `movielens`
   ```
 
 <h4> Orinigal Multi-modal Datasets </h4>
-🌹🌹 Please cite our paper if you use the 'netflix' dataset~  
+🌹🌹 Please cite our paper if you use the 'netflix' dataset~ ❤️  
 
-We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc.
+We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc. 
 
 
 
