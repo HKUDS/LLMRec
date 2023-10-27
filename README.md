@@ -20,7 +20,7 @@ This repository hosts the code, original data and augmented data of **LLMRec**.
 -----------
 
 <p align="center">
-<img src="./llmrec_framework.png" alt="LLMRec" />
+<img src="./image/llmrec_framework.png" alt="LLMRec" />
 </p>
 
 LLMRec is a novel framework that enhances recommenders by applying three simple yet effective LLM-based graph augmentation strategies to recommendation system. LLMRec is to make the most of the content within online platforms (e.g., Netflix, MovieLens) to augment interaction graph by i) reinforcing u-i interactive edges, ii) enhancing item node attributes, and iii) conducting user node profiling, intuitively from the natural language perspective.
@@ -83,6 +83,17 @@ Supported datasets:  `netflix`, `movielens`
 🌹🌹 Please cite our paper if you use the 'netflix' dataset~ ❤️  
 
 We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc. 
+
+<-- <p align="center">
+<img src="./image/llmrec_framework.png" alt="LLMRec" />
+<img src="./image/textual_data1.png" alt="LLMRec" />
+<img src="./image/textual_data2.png" alt="LLMRec" />
+<img src="./image/textual_data3.png" alt="LLMRec" />
+</p> -->
+
+![Textual data in original 'Netflix Prize Data' on Kaggle.](./image/textual_data1.png)
+![Textual data in original 'Netflix Prize Data'](./image/textual_data2.png)
+![LLM-augmented textual data](./image/textual_data3.png)
 
 
 
