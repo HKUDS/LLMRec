@@ -105,7 +105,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
  `Visual Modality` We have released the visual information obtained from web crawling in the "Netflix_Posters" folder. (The following image displays the poster acquired by web crawling using item information from the Netflix Prize Data.)
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/visiual_data1.png" alt="Image 1" style="width:600px;height:450px;">
+   <img src="./image/visiual_data1.png" alt="Image 1" style="width:600px;height:480px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 </div>
