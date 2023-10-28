@@ -25,7 +25,7 @@ This repository hosts the code, original data and augmented data of **LLMRec**.
 
 LLMRec is a novel framework that enhances recommenders by applying three simple yet effective LLM-based graph augmentation strategies to recommendation system. LLMRec is to make the most of the content within online platforms (e.g., Netflix, MovieLens) to augment interaction graph by i) reinforcing u-i interactive edges, ii) enhancing item node attributes, and iii) conducting user node profiling, intuitively from the natural language perspective.
 
-
+-----------
 
 ## 🎉 News 📢📢  
 
@@ -38,7 +38,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 - [x] [2023.10.28] 🚀🚀 Release the code of LLMRec.
 
 
-
+-----------
 
 <h2> Dependencies </h2>
 
@@ -83,7 +83,7 @@ python ./main.py
 python ./main.py
 ```
 
-
+-----------
 
 
 <h2> Datasets </h2>
@@ -145,6 +145,9 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sentence-BERT](https://www.sbert.net/) separately as encoders for visual side information and textual side information.
 
 
+
+
+-----------
 
 <h2> Prompt & Completion Example </h2>
 
@@ -208,7 +211,7 @@ Out[4]: torch.Size([13187, 10])
 
 
 
-
+-----------
 
 <h1> Citing </h1>
 
