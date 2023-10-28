@@ -69,6 +69,22 @@ python ./main.py --dataset {DATASET}
 ```
 Supported datasets:  `netflix`, `movielens`
 
+Specific code execution example on 'netflix':
+```
+# LLMRec
+python ./main.py 
+# w/o-u-i
+python ./main.py
+# w/o-u
+python ./main.py
+# w/o-i
+python ./main.py
+# w/o-u&i
+python ./main.py
+```
+
+
+
 
 <h2> Datasets </h2>
 
@@ -120,6 +136,9 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 </div>
 
 
+🌹🌹 The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released by GroupLens at the University of Minnesota. We collected 'title', 'year', and 'genre' as the basic item-related textual information, while the visual content was obtained from MovieLens through a URL for each item. We have also made available a pre-processed MovieLens dataset that can be used directly with LLMRec, MMSSL, LATTICE, and MICRO, eliminating the need for any extra data preprocessing, including (1) original images and text, (2) basic user-item interactions, and multi-modal information, (3) as well as LLM-augmented content.
+
+
 
 
 
@@ -157,7 +176,9 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 <h2> Candidate Preparing for LLM-based Implicit Feedback Augmentation</h2>
 
  step 1: select base model such as MMSSL or LATTICE
+ 
  step 2: obtain user embedding and item embedding
+ 
  step 3: generate candidate
 ```
       _, candidate_indices = torch.topk(torch.mm(G_ua_embeddings, G_ia_embeddings.T), k=10)  
