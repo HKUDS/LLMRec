@@ -84,7 +84,7 @@ Supported datasets:  `netflix`, `movielens`
 
 We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like MMSSL, LATTICE, MICRO, etc. 
 
- `Textual Modality:` We have released the item information curated from the original dataset in the "item_attribute.csv" file. Additionally, we have incorporated textual information enhanced by LLM into the "augmented_item_attribute_agg.csv" file. (The following three images represent (1) information about Kaggle as described on the Kaggle website, (2) textual information from the original Netflix Prize Data, and (3) textual information augmented by LLM (Large Language Model).)
+ `Textual Modality:` We have released the item information curated from the original dataset in the "item_attribute.csv" file. Additionally, we have incorporated textual information enhanced by LLM into the "augmented_item_attribute_agg.csv" file. (The following three images represent (1) information about Kaggle as described on the Kaggle website, (2) textual information from the original Netflix Prize Data, and (3) textual information augmented by LLMs.)
 <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
    <img src="./image/textual_data1.png" alt="Image 1" style="width:270px;height:180px;">
@@ -105,7 +105,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
  `Visual Modality:` We have released the visual information obtained from web crawling in the "Netflix_Posters" folder. (The following image displays the poster acquired by web crawling using item information from the Netflix Prize Data.)
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/visiual_data1.png" alt="Image 1" style="width:600px;height:520px;">
+   <img src="./image/visiual_data1.png" alt="Image 1" style="width:690px;height:600px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 </div>
