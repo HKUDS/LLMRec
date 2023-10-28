@@ -80,14 +80,11 @@ python ./main.py --aug_sample_rate=0.0
 # w/o-u
 python ./main.py --user_cat_rate=0
 
-# w/o-i
-python ./main.py --item_cat_rate=0
-
 # w/o-u&i
 python ./main.py --user_cat_rate=0  --item_cat_rate=0
 
 # w/o-prune
-
+python ./main.py --prune_loss_drop_rate=0
 ```
 
 
