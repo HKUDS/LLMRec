@@ -29,13 +29,13 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 📢📢  
 
-- [x] [2023.10.27] 🚀🚀 Release the script for constructing the prompt.
+- [x] [2023.10.29] 🚀🚀 Release the script for constructing the prompt.
 
-- [x] [2023.10.27] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
+- [x] [2023.10.29] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
 
-- [x] [2023.10.27] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024llmrec.pdf).
+- [x] [2023.10.28] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/wsdm2024llmrec.pdf).
 
-- [x] [2023.10.27] 🚀🚀 Release the code of LLMRec.
+- [x] [2023.10.28] 🚀🚀 Release the code of LLMRec.
 
 
 
@@ -95,7 +95,7 @@ python ./main.py
         ...
   ```
 
-
+<h3> Multi-modal Datasets </h3>
 🌹🌹 Please cite our paper if you use the 'netflix' dataset~ ❤️  
 
 We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), [MICRO](https://github.com/CRIPAC-DIG/MICRO), etc. 
@@ -127,18 +127,22 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 </div>
  
 
-<h4> Orinigal Multi-modal Datasets & Augmented Datasets </h4>
+<h3> Orinigal Multi-modal Datasets & Augmented Datasets </h3>
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/datasets.png" alt="Image 1" style="width:690px;height:430px;">
+   <img src="./image/datasets.png" alt="Image 1" style="width:690px;height:420px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 </div>
 
 
-
-
+<br>
+<p>
 🌹🌹 The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released by GroupLens at the University of Minnesota. We collected 'title', 'year', and 'genre' as the basic item-related textual information, while the visual content was obtained from MovieLens through a URL for each item. We have also made available a pre-processed MovieLens dataset that can be used directly with [LLMRec](https://github.com/HKUDS/LLMRec), [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), and [MICRO](https://github.com/CRIPAC-DIG/MICRO), eliminating the need for any extra data preprocessing, including (1) original images and text, (2) basic user-item interactions, and multi-modal information, (3) as well as LLM-augmented content.
+
+<h3> Encoding the Multi-modal Content. </h3>
+
+We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sentence-BERT](https://www.sbert.net/) separately as encoders for visual side information and textual side information.
 
 
 
@@ -205,8 +209,6 @@ Out[4]: torch.Size([13187, 10])
 
 
 
-
-<h2> Experimental Results </h2>
 
 <h1> Citing </h1>
 
