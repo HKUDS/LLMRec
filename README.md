@@ -72,16 +72,27 @@ Supported datasets:  `netflix`, `movielens`
 Specific code execution example on 'netflix':
 ```
 # LLMRec
-python ./main.py 
+python ./main.py
+
 # w/o-u-i
-python ./main.py
+python ./main.py --aug_sample_rate=0.0
+
 # w/o-u
-python ./main.py
+python ./main.py --user_cat_rate=0
+
 # w/o-i
-python ./main.py
+python ./main.py --item_cat_rate=0
+
 # w/o-u&i
-python ./main.py
+python ./main.py --user_cat_rate=0  --item_cat_rate=0
+
+# w/o-prune
+
 ```
+
+
+
+
 
 -----------
 
@@ -121,7 +132,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
  `Visual Modality:` We have released the visual information obtained from web crawling in the "Netflix_Posters" folder. (The following image displays the poster acquired by web crawling using item information from the Netflix Prize Data.)
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/visiual_data1.png" alt="Image 1" style="width:690px;height:600px;">
+   <img src="./image/visiual_data1.png" alt="Image 1" style="width:690px;height:590px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 </div>
@@ -130,7 +141,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 <h3> Orinigal Multi-modal Datasets & Augmented Datasets </h3>
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/datasets.png" alt="Image 1" style="width:690px;height:420px;">
+   <img src="./image/datasets.png" alt="Image 1" style="width:690px;height:410px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 </div>
