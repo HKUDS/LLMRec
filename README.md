@@ -86,17 +86,17 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 
 <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
-   <img src="./image/textual_data1.png" alt="Image 1" style="width:300px;height:200px;">
+   <img src="./image/textual_data1.png" alt="Image 1" style="width:270px;height:180px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
   </figure>
 
   <figure style="text-align: center; margin: 10px;">
-    <img src="./image/textual_data2.png" alt="Image 2" style="width:300px;height:200px;">
+    <img src="./image/textual_data2.png" alt="Image 2" style="width:270px;height:180px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption> -->
   </figure>
 
   <figure style="text-align: center; margin: 10px;">
-    <img src="./image/textual_data3.png" alt="Image 2" style="width:300px;height:200px;">
+    <img src="./image/textual_data3.png" alt="Image 2" style="width:270px;height:180px;">
 <!--     <figcaption>LLM-augmented textual data.</figcaption> -->
   </figure>  
 </div>
