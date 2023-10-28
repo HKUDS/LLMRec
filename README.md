@@ -156,22 +156,36 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 
 <h2> Candidate Preparing for LLM-based Implicit Feedback Augmentation</h2>
 
- # step 1: select base model such as MMSSL or LATTICE
- # step 2: obtain user embedding and item embedding
- # step 3: generate candidate
+ step 1: select base model such as MMSSL or LATTICE
+ step 2: obtain user embedding and item embedding
+ step 3: generate candidate
 ```
       _, candidate_indices = torch.topk(torch.mm(G_ua_embeddings, G_ia_embeddings.T), k=10)  
-      pickle.dump(candidate_indices.cpu(), open('/home/ww/FILE_from_ubuntu18/Code/work10/data/netflix_valid_item/prepare_dataset4finetune/candidate_indices','wb'))
+      pickle.dump(candidate_indices.cpu(), open('./data/' + args.datasets +  '/candidate_indices','wb'))
 ```
+Example of specific candidate data.
+```
+In [3]: candidate_indices
+Out[3]: 
+tensor([[ 9765,  2930,  6646,  ..., 11513, 12747, 13503],
+        [ 3665,  8999,  2587,  ...,  1559,  2975,  3759],
+        [ 2266,  8999,  1559,  ...,  8639,   465,  8287],
+        ...,
+        [11905, 10195,  8063,  ..., 12945, 12568, 10428],
+        [ 9063,  6736,  6938,  ...,  5526, 12747, 11110],
+        [ 9584,  4163,  4154,  ...,  2266,   543,  7610]])
+
+In [4]: candidate_indices.shape
+Out[4]: torch.Size([13187, 10])
+```
+
+
+
 
 
 
 
 <h2> Experimental Results </h2>
-
-
-
-
 
 <h1> Citing </h1>
 
