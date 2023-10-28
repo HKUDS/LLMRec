@@ -111,20 +111,14 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 </div>
  
 
-<h4> Orinigal Multi-modal Datasets </h4>
-| Dataset       | Netflix |                             | MovieLens                                |
-|---------------|---------|-----------------------------|------------------------------------------|
-| Graph         | Ori.    | U                           | I                                        |
-|               |         | 13187                       | 17366                                    |
-|               | Aug.    | E                           | 26374                                    |
-| Ori. Sparsity |         | 99.970%                     | 99.915%                                  |
-| Att.          | Ori.    | U: None                     | I: year, title                           |
-|               | Aug.    | U[1536]                     | age, gender, liked genre, disliked genre |
-|               |         | I[1536]                     | director, country, language              |
-| Modality      |         | Textual[768], Visiual [512] | Textual [768], Visiual [512]             |
+<h4> Orinigal Multi-modal Datasets & Augmented Datasets </h4>
+ <div style="display: flex; justify-content: center; align-items: flex-start;">
+  <figure style="text-align: center; margin: 10px;">
+   <img src="./image/datasets.png" alt="Image 1" style="width:690px;height:600px;">
+<!--     <figcaption>Textual data in original 'Netflix Prize Data' on Kaggle.</figcaption> -->
+  </figure>
+</div>
 
-
-<h4> Augmented Datasets</h4>
 
 
 
