@@ -172,6 +172,7 @@ We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sent
 
 
 <h4> LLM-based User Profile Augmentation </h4>
+
 > Prompt 
 >> ...
 
@@ -181,6 +182,7 @@ We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sent
 
 
 <h4> LLM-based Item Attributes Augmentation </h4>
+
 > Prompt 
 >> ...
 
