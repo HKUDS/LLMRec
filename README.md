@@ -159,37 +159,13 @@ We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sent
 
 -----------
 
+## 👉 TODO 
+
 <h2> Prompt & Completion Example </h2>
-
-
 <h4> LLM-based Implicit Feedback Augmentation </h4>
-> Prompt 
->> ...
-
-> Completion
->> ...
-
-
-
-
-
 <h4> LLM-based User Profile Augmentation </h4>
-
-> Prompt 
->> ...
-
-> Completion
->> ...
-
-
-
 <h4> LLM-based Item Attributes Augmentation </h4>
 
-> Prompt 
->> ...
-
-> Completion
->> ...
 
 
 <h2> Candidate Preparing for LLM-based Implicit Feedback Augmentation</h2>
