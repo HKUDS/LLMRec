@@ -147,6 +147,8 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 <br>
 <p>
 🌹🌹 
+<br>
+<p>
 The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released by GroupLens at the University of Minnesota. We collected 'title', 'year', and 'genre' as the basic item-related textual information, while the visual content was obtained from MovieLens through a URL for each item. We have also made available a pre-processed MovieLens dataset that can be used directly with [LLMRec](https://github.com/HKUDS/LLMRec), [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), and [MICRO](https://github.com/CRIPAC-DIG/MICRO), eliminating the need for any extra data preprocessing, including (1) original images and text, (2) basic user-item interactions, and multi-modal information, (3) as well as LLM-augmented content.
 
 <h3> Encoding the Multi-modal Content. </h3>
