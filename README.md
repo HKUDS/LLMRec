@@ -38,6 +38,12 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 - [x] [2023.10.28] 🚀🚀 Release the code of LLMRec.
 
 
+## 👉 TODO 
+
+- [ ] Provide a different larger version of the dataset。
+- [ ] ...
+
+
 -----------
 
 <h2> Dependencies </h2>
@@ -159,12 +165,30 @@ We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sent
 
 -----------
 
-## 👉 TODO 
+
 
 <h2> Prompt & Completion Example </h2>
 <h4> LLM-based Implicit Feedback Augmentation </h4>
+> Prompt 
+>> Recommend user with movies based on user history  that each movie with title, year, genre. History: [332] Heart and Souls (1993), Comedy|Fantasy [364] Men with Brooms(2002), Comedy|Drama|Romance Candidate: [121]The Vampire Lovers (1970), Horror [155] Billabong Odyssey (2003),Documentary [248]The Invisible Guest 2016, Crime, Drama, Mystery   Output index of user's favorite and dislike movie from candidate.Please just give the index in [].
+
+> Completion
+>> 248   121
+
 <h4> LLM-based User Profile Augmentation </h4>
+> Prompt 
+>> Generate user profile based on the history of user, that each movie with title, year, genre. History: [332] Heart and Souls (1993), Comedy|Fantasy [364] Men with Brooms (2002), Comedy|Drama|Romance  Please output the following infomation of user, output format: {age: , gender: , liked genre: , disliked genre: , liked directors: , country: , language: }
+
+> Completion
+>> {age: 50, gender: female, liked genre: Comedy|Fantasy, Comedy|Drama|Romance, disliked genre: Thriller, Horror, liked directors: Ron Underwood, country: Canada, United States, language: English}
+
+
 <h4> LLM-based Item Attributes Augmentation </h4>
+> Prompt 
+>> Provide the inquired information of the given movie. [332] Heart and Souls (1993), Comedy|Fantasy The inquired information is: director, country, language. And please output them in form of: director, country, language 
+
+> Completion
+>> Ron Underwood, USA, English
 
 
 
