@@ -200,7 +200,7 @@ We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sent
 <h4> Augmented Implicit Feedback (Edge) </h4>
 For each user, 0 represents a positive sample, and 1 represents a negative sample.
   <figure style="text-align: center; margin: 10px;">
-    <img src="./image/u_i.png" alt="Image 2" style="width:480px;height:740px;">
+    <img src="./image/u_i.png" alt="Image 2" style="width:400px;height:660px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption> -->
   </figure>
 
@@ -208,7 +208,7 @@ For each user, 0 represents a positive sample, and 1 represents a negative sampl
 <h4> Augmented User Profile (User Node) </h4>
 For each user, the dictionary stores augmented information such as 'age,' 'gender,' 'liked genre,' 'disliked genre,' 'liked directors,' 'country,' and 'language.'
   <figure style="text-align: center; margin: 10px;">
-    <img src="./image/u.png" alt="Image 2" style="width:1100px;height:790px;">
+    <img src="./image/u.png" alt="Image 2" style="width:900px;height:700px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption> -->
   </figure>
 
@@ -216,7 +216,7 @@ For each user, the dictionary stores augmented information such as 'age,' 'gende
 ##### 增强的item attribute
 For each item, the dictionary stores augmented information such as 'director,' 'country,' and 'language.'
   <figure style="text-align: center; margin: 10px;">
-    <img src="./image/i.png" alt="Image 2" style="width:700px;height:900px;">
+    <img src="./image/i.png" alt="Image 2" style="width:680px;height:800px;">
 <!--     <figcaption>Textual data in original 'Netflix Prize Data'.</figcaption> -->
   </figure>
 
