@@ -157,6 +157,15 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
   
 The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released by GroupLens at the University of Minnesota. We collected 'title', 'year', and 'genre' as the basic item-related textual information, while the visual content was obtained from MovieLens through a URL for each item. We have also made available a pre-processed MovieLens dataset that can be used directly with [LLMRec](https://github.com/HKUDS/LLMRec), [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), and [MICRO](https://github.com/CRIPAC-DIG/MICRO), eliminating the need for any extra data preprocessing, including (1) original images and text, (2) basic user-item interactions, and multi-modal information, (3) as well as LLM-augmented content.
 
+
+<h3> Download the Netflix and MovieLens datasets. </h3>
+
+We provide the processed data (e.g., CF traing data, multi-modal data including item text and posters, LLM-augmented text/embedding) at Google Drive.
+
+- `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link). 
+- `movielens`: [Google Drive MovieLens](https://drive.google.com/drive/folders/1fsAID42Aa2vhQN-OZ4EAd9z8NP-Goiir?usp=drive_link).  
+
+
 <h3> Encoding the Multi-modal Content. </h3>
 
 We use [CLIP-ViT](https://huggingface.co/openai/clip-vit-base-patch32) and [Sentence-BERT](https://www.sbert.net/) separately as encoders for visual side information and textual side information.
