@@ -162,8 +162,10 @@ The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released b
 
 We provide the processed data (i.e., CF training data, multi-modal data including item text and posters, LLM-augmented text/embedding) at Google Drive. 🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
 
-- `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link). 
-- `movielens`: [Google Drive MovieLens](https://drive.google.com/drive/folders/1fsAID42Aa2vhQN-OZ4EAd9z8NP-Goiir?usp=drive_link).  
+- `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link). [image&text](https://drive.google.com/file/d/1euAnMYD1JBPflx0M86O2M9OsbBSfrzPK/view?usp=drive_link)        
+- `movielens`: [Google Drive MovieLens](https://drive.google.com/drive/folders/1fsAID42Aa2vhQN-OZ4EAd9z8NP-Goiir?usp=drive_link).   [image&text](https://drive.google.com/file/d/1Y9nSrsYKM4dGD93WXnOHKRb2Nj6qqVjt/view?usp=drive_link)        
+
+
 
 
 <h3> Encoding the Multi-modal Content. </h3>
