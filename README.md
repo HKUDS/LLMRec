@@ -29,9 +29,9 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 📢📢  
 
-- [x] [2023.10.29] 🚀🚀 Release the script for constructing the prompt.
+- [x] [2023.11.1] 🔥🔥 Release the multi-modal datasets (Netflix, MovieLens), including textual data and visiual data.
 
-- [x] [2023.10.29] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
+- [x] [2023.11.1] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
 
 - [x] [2023.10.28] 🔥🔥 The full paper of our LLMRec is available at [LLMRec: Large Language Models with Graph Augmentation for Recommendation](https://llmrec.files.wordpress.com/2023/10/llmrec-2.pdf).
 
@@ -41,6 +41,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 ## 👉 TODO 
 
 - [ ] Provide different larger version of the datasets.
+- [ ] 🚀🚀 Release the script for constructing the prompt.
 - [ ] ...
 
 
