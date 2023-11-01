@@ -50,7 +50,7 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 <h2> Dependencies </h2>
 
 ```
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 
 
