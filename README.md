@@ -160,7 +160,7 @@ The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released b
 
 <h3> Download the Netflix and MovieLens datasets. </h3>
 
-We provide the processed data (e.g., CF traing data, multi-modal data including item text and posters, LLM-augmented text/embedding) at Google Drive.
+We provide the processed data (i.e., CF training data, multi-modal data including item text and posters, LLM-augmented text/embedding) at Google Drive.
 
 - `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link). 
 - `movielens`: [Google Drive MovieLens](https://drive.google.com/drive/folders/1fsAID42Aa2vhQN-OZ4EAd9z8NP-Goiir?usp=drive_link).  
