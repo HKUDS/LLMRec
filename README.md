@@ -277,11 +277,10 @@ If you find this work helpful to your research, please kindly consider citing ou
 @inproceedings{wei2023llmrec,
   title={LLMRec: Large Language Models with Graph Augmentation for Recommendation},
   author={Wei, Wei and Ren, Xubin and Tang, Jaibin and Wang, Qingyong and Su, Lixin and Cheng, Suqi and Wang, Junfeng and Yin, Dawei and Huang, Chao},
-  journal={arXiv preprint arXiv:2308.05697},
+  journal={arXiv preprint arXiv:2311.00423},
   year={2023}
 }
 ```
-
 
 
 ## Acknowledgement
