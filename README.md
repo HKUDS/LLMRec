@@ -29,6 +29,8 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 📢📢  
 
+- [x] [2023.11.3] 🚀🚀 Release the script for constructing the prompt.
+
 - [x] [2023.11.1] 🔥🔥 Release the multi-modal datasets (Netflix, MovieLens), including textual data and visual data.
 
 - [x] [2023.11.1] 🚀🚀 Release LLM-augmented textual data(by gpt-3.5-turbo-0613), and LLM-augmented embedding(by text-embedding-ada-002).
@@ -41,7 +43,6 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 ## 👉 TODO 
 
 - [ ] Provide different larger version of the datasets.
-- [ ] 🚀🚀 Release the script for constructing the prompt.
 - [ ] ...
 
 
@@ -60,9 +61,9 @@ pip install -r requirements.txt
 
 ```
 cd LLMRec/LLM_augmentation/
-python ./try_gpt_ui_aug.py
-python ./try_gpt_user_profiling.py
-python ./try_gpt_i_attribute_generate_aug.py
+python ./gpt_ui_aug.py
+python ./gpt_user_profiling.py
+python ./gpt_i_attribute_generate_aug.py
 ```
 
 
