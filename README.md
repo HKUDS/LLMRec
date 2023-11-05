@@ -157,7 +157,9 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 
 <h3> Download the Netflix datasets. </h3>
 🚀🚀
-We provide the processed data (i.e., CF training data & basic user-item interactions, original multi-modal data including images and text of items and LLM-augmented text/embedding). 🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
+We provide the processed data (i.e., CF training data & basic user-item interactions, original multi-modal data including images and text of items, encoded visual/textual features and LLM-augmented text/embedding). 
+
+🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
 
 - `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link).  [🌟(Image&Text)](https://drive.google.com/file/d/1euAnMYD1JBPflx0M86O2M9OsbBSfrzPK/view?usp=drive_link)
 
