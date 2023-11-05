@@ -114,7 +114,7 @@ python ./main.py --prune_loss_drop_rate=0
 <h3> Multi-modal Datasets </h3>
 🌹🌹 Please cite our paper if you use the 'netflix' dataset~ ❤️  
 
-We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation like [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), [MICRO](https://github.com/CRIPAC-DIG/MICRO), etc. 
+We collected a multi-modal dataset using the original [Netflix Prize Data](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data) released on the [Kaggle](https://www.kaggle.com/) website. The data format is directly compatible with SOTA baselines for multi-modal recommendation models like [LLMRec](https://github.com/HKUDS/LLMRec), [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), [MICRO](https://github.com/CRIPAC-DIG/MICRO), etc, and others, without requiring any additional data preprocessing.
 
  `Textual Modality:` We have released the item information curated from the original dataset in the "item_attribute.csv" file. Additionally, we have incorporated textual information enhanced by LLM into the "augmented_item_attribute_agg.csv" file. (The following three images represent (1) information about Netflix as described on the Kaggle website, (2) textual information from the original Netflix Prize Data, and (3) textual information augmented by LLMs.)
 <div style="display: flex; justify-content: center; align-items: flex-start;">
@@ -154,17 +154,12 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 
 <br>
 <p>
-🚀🚀
-  
-The [MovieLens](https://grouplens.org/datasets/movielens/) dataset is released by GroupLens at the University of Minnesota. We collected 'title', 'year', and 'genre' as the basic item-related textual information, while the visual content was obtained from MovieLens through a URL for each item. We have also made available a pre-processed MovieLens dataset that can be used directly with [LLMRec](https://github.com/HKUDS/LLMRec), [MMSSL](https://github.com/HKUDS/MMSSL), [LATTICE](https://github.com/CRIPAC-DIG/LATTICE), and [MICRO](https://github.com/CRIPAC-DIG/MICRO), eliminating the need for any extra data preprocessing, including (1) original images and text, (2) basic user-item interactions, and multi-modal information, (3) as well as LLM-augmented content.
-
 
 <h3> Download the Netflix and MovieLens datasets. </h3>
+🚀🚀
+We provide the processed data (i.e., CF training data & basic user-item interactions, original multi-modal data including images and text of items and LLM-augmented text/embedding). 🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
 
-We provide the processed data (i.e., CF training data, multi-modal data including item text and posters, LLM-augmented text/embedding) at Google Drive. 🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
-
-- `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link).  [🌟(Image&Text)](https://drive.google.com/file/d/1euAnMYD1JBPflx0M86O2M9OsbBSfrzPK/view?usp=drive_link)        
-- `movielens`: [Google Drive MovieLens](https://drive.google.com/drive/folders/1fsAID42Aa2vhQN-OZ4EAd9z8NP-Goiir?usp=drive_link).  [🌟(Image&Text)](https://drive.google.com/file/d/1Y9nSrsYKM4dGD93WXnOHKRb2Nj6qqVjt/view?usp=drive_link)        
+- `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link).  [🌟(Image&Text)](https://drive.google.com/file/d/1euAnMYD1JBPflx0M86O2M9OsbBSfrzPK/view?usp=drive_link)
 
 
 
