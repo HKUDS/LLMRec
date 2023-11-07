@@ -143,7 +143,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 </div>
  
 
-<h3> Orinigal Multi-modal Datasets & Augmented Datasets </h3>
+<h3> Original Multi-modal Datasets & Augmented Datasets </h3>
  <div style="display: flex; justify-content: center; align-items: flex-start;">
   <figure style="text-align: center; margin: 10px;">
    <img src="./image/datasets.png" alt="Image 1" style="width:480px;height:270px;">
