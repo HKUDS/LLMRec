@@ -162,6 +162,14 @@ We provide the processed data (i.e., CF training data & basic user-item interact
 - `netflix`: [Google Drive Netflix](https://drive.google.com/drive/folders/1BGKm3nO4xzhyi_mpKJWcfxgi3sQ2j_Ec?usp=drive_link).  [🌟(Image&Text)](https://drive.google.com/file/d/1euAnMYD1JBPflx0M86O2M9OsbBSfrzPK/view?usp=drive_link)
 
 
+```
+@article{wei2023llmrec,
+  title={LLMRec: Large Language Models with Graph Augmentation for Recommendation},
+  author={Wei, Wei and Ren, Xubin and Tang, Jiabin and Wang, Qinyong and Su, Lixin and Cheng, Suqi and Wang, Junfeng and Yin, Dawei and Huang, Chao},
+  journal={arXiv preprint arXiv:2311.00423},
+  year={2023}
+}
+```
 
 
 <h3> Encoding the Multi-modal Content. </h3>
