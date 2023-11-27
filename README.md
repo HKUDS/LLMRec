@@ -155,7 +155,7 @@ We collected a multi-modal dataset using the original [Netflix Prize Data](https
 <br>
 <p>
 
-<h3> Download the Netflix datasets. </h3>
+<h3> Download the Netflix dataset. </h3>
 🚀🚀
 We provide the processed data (i.e., CF training data & basic user-item interactions, original multi-modal data including images and text of items, encoded visual/textual features and LLM-augmented text/embeddings).  🌹 We hope to contribute to our community and facilitate your research 🚀🚀 ~
 
