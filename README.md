@@ -220,7 +220,7 @@ For each user, the dictionary stores augmented information such as 'age,' 'gende
   </figure>
 
 
-##### 增强的item attribute
+##### Augmented item attribute
 For each item, the dictionary stores augmented information such as 'director,' 'country,' and 'language.'
   <figure style="text-align: center; margin: 10px;">
     <img src="./image/i.png" alt="Image 2" style="width:500px;height:660px;">
