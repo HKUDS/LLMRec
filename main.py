@@ -21,7 +21,7 @@ import random
 import copy
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 from utility.parser import parse_args
 from Models import MM_Model, Decoder  
@@ -33,7 +33,7 @@ import setproctitle
 
 args = parse_args()
 
-
+print("Program started")
 class Trainer(object):
     def __init__(self, data_config):
        
@@ -67,10 +67,14 @@ class Trainer(object):
         self.user_init_embedding = pickle.load(open(args.data_path + args.dataset + '/augmented_user_init_embedding_final','rb'))
         # get separate embedding matrix 
         if args.dataset=='preprocessed_raw_MovieLens':
-            augmented_total_embed_dict = {'title':[] , 'genre':[], 'director':[], 'country':[], 'language':[]}   
-        elif args.dataset=='netflix_valid_item':
+            print("Dealing with Movie Lens") 
+            augmented_total_embed_dict = {'title':[] , 'genre':[], 'director':[], 'country':[], 'language':[]}  
+        else:
+            print("Dealing with Netflix")
             augmented_total_embed_dict = {'year':[] , 'title':[], 'director':[], 'country':[], 'language':[]}   
+        print("Loading Pickle...")
         augmented_atttribute_embedding_dict = pickle.load(open(args.data_path + args.dataset + '/augmented_atttribute_embedding_dict','rb'))
+        print("Finished Loading Pickle.")
         for value in augmented_atttribute_embedding_dict.keys():
             for i in range(len(augmented_atttribute_embedding_dict[value])):
                 augmented_total_embed_dict[value].append(augmented_atttribute_embedding_dict[value][i])   
@@ -91,10 +95,10 @@ class Trainer(object):
         self.iu_graph = self.matrix_to_tensor(self.iu_graph)
         self.image_ui_graph = self.text_ui_graph = self.ui_graph
         self.image_iu_graph = self.text_iu_graph = self.iu_graph
-
+        print("L3aliiiiiiiiiiiiiiiiiittttttttttttttttttttttttt")
         self.model_mm = MM_Model(self.n_users, self.n_items, self.emb_dim, self.weight_size, self.mess_dropout, self.image_feats, self.text_feats, self.user_init_embedding, self.item_attribute_embedding)      
-        self.model_mm = self.model_mm.cuda()  
-        self.decoder = Decoder(self.user_init_embedding.shape[1]).cuda()
+        self.model_mm = self.model_mm  
+        self.decoder = Decoder(self.user_init_embedding.shape[1])
 
 
         self.optimizer = optim.AdamW(
@@ -109,7 +113,7 @@ class Trainer(object):
         ]
             , lr=args.de_lr)  
 
-
+        print("Tekfa init")
 
     def csr_norm(self, csr_mat, mean_flag=False):
         rowsum = np.array(csr_mat.sum(1))
@@ -131,7 +135,7 @@ class Trainer(object):
         indices = torch.from_numpy(np.vstack((cur_matrix.row, cur_matrix.col)).astype(np.int64))  #
         values = torch.from_numpy(cur_matrix.data)  #
         shape = torch.Size(cur_matrix.shape)
-        return torch.sparse.FloatTensor(indices, values, shape).to(torch.float32).cuda()  #
+        return torch.sparse.FloatTensor(indices, values, shape).to(torch.float32)  #
 
     def innerProduct(self, u_pos, i_pos, u_neg, j_neg):  
         pred_i = torch.sum(torch.mul(u_pos,i_pos), dim=-1) 
@@ -156,7 +160,7 @@ class Trainer(object):
         return feat_emb_loss
 
     def prune_loss(self, pred, drop_rate):
-        ind_sorted = np.argsort(pred.cpu().data).cuda()
+        ind_sorted = np.argsort(pred.cpu().data)
         loss_sorted = pred[ind_sorted]
         remember_rate = 1 - drop_rate
         num_remember = int(remember_rate * len(loss_sorted))
@@ -187,7 +191,7 @@ class Trainer(object):
         return result
 
     def train(self):
-
+        print("training")
         now_time = datetime.now()
         run_time = datetime.strftime(now_time,'%Y_%m_%d__%H_%M_%S')
 
@@ -197,6 +201,7 @@ class Trainer(object):
         n_batch = data_generator.n_train // args.batch_size + 1
         best_recall = 0
         for epoch in range(args.epoch):
+            print("training epoches")
             t1 = time()
             loss, mf_loss, emb_loss, reg_loss = 0., 0., 0., 0.
             contrastive_loss = 0.
@@ -262,13 +267,13 @@ class Trainer(object):
                         input_i[value] = item_att_feats[value][i_mask_nodes]
                     decoded_u, decoded_i = self.decoder(torch.tensor(user_prof_feat[u_mask_nodes]), input_i)
                     if args.feat_loss_type=='mse':
-                        att_re_loss += self.mse_criterion(decoded_u, torch.tensor(self.user_init_embedding[u_mask_nodes]).cuda(), alpha=args.alpha_l)
+                        att_re_loss += self.mse_criterion(decoded_u, torch.tensor(self.user_init_embedding[u_mask_nodes]), alpha=args.alpha_l)
                         for index,value in enumerate(item_att_feats.keys()):  
-                            att_re_loss += self.mse_criterion(decoded_i[index], torch.tensor(self.item_attribute_embedding[value][i_mask_nodes]).cuda(), alpha=args.alpha_l)
+                            att_re_loss += self.mse_criterion(decoded_i[index], torch.tensor(self.item_attribute_embedding[value][i_mask_nodes]), alpha=args.alpha_l)
                     elif args.feat_loss_type=='sce':
-                        att_re_loss += self.sce_criterion(decoded_u, torch.tensor(self.user_init_embedding[u_mask_nodes]).cuda(), alpha=args.alpha_l) 
+                        att_re_loss += self.sce_criterion(decoded_u, torch.tensor(self.user_init_embedding[u_mask_nodes]), alpha=args.alpha_l) 
                         for index,value in enumerate(item_att_feats.keys()):  
-                            att_re_loss += self.sce_criterion(decoded_i[index], torch.tensor(self.item_attribute_embedding[value][i_mask_nodes]).cuda(), alpha=args.alpha_l)
+                            att_re_loss += self.sce_criterion(decoded_i[index], torch.tensor(self.item_attribute_embedding[value][i_mask_nodes]), alpha=args.alpha_l)
 
                 batch_loss = batch_mf_loss + batch_emb_loss + batch_reg_loss + feat_emb_loss + args.aug_mf_rate*batch_mf_loss_aug + args.mm_mf_rate*mm_mf_loss + args.att_re_rate*att_re_loss
                 nn.utils.clip_grad_norm_(self.model_mm.parameters(), max_norm=1.0)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      #+ ssl_loss2 #+ batch_contrastive_loss
