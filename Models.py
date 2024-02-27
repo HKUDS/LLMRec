@@ -14,7 +14,7 @@ from utility.parser import parse_args
 from utility.norm import build_sim, build_knn_normalized_graph
 args = parse_args()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 class MM_Model(nn.Module):
     def __init__(self, n_users, n_items, embedding_dim, weight_size, dropout_list, image_feats, text_feats, user_init_embedding, item_attribute_dict):
@@ -40,12 +40,12 @@ class MM_Model(nn.Module):
         self.item_id_embedding = nn.Embedding(n_items, self.embedding_dim)
         nn.init.xavier_uniform_(self.user_id_embedding.weight)
         nn.init.xavier_uniform_(self.item_id_embedding.weight)
-        self.image_feats = torch.tensor(image_feats).float().cuda()
-        self.text_feats = torch.tensor(text_feats).float().cuda()
-        self.user_feats = torch.tensor(user_init_embedding).float().cuda()
+        self.image_feats = torch.tensor(image_feats).float()
+        self.text_feats = torch.tensor(text_feats).float()
+        self.user_feats = torch.tensor(user_init_embedding).float()
         self.item_feats = {}
         for key in item_attribute_dict.keys():                                   
-            self.item_feats[key] = torch.tensor(item_attribute_dict[key]).float().cuda() 
+            self.item_feats[key] = torch.tensor(item_attribute_dict[key]).float() 
 
         self.softmax = nn.Softmax(dim=-1)
         self.act = nn.Sigmoid()  
@@ -108,7 +108,7 @@ class MM_Model(nn.Module):
         values = torch.from_numpy(cur_matrix.data)  #
         shape = torch.Size(cur_matrix.shape)
 
-        return torch.sparse.FloatTensor(indices, values, shape).to(torch.float32).cuda()  #
+        return torch.sparse.FloatTensor(indices, values, shape).to(torch.float32)  #
 
     def para_dict_to_tenser(self, para_dict):  
         """
