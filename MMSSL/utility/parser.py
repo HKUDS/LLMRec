@@ -47,7 +47,7 @@ def parse_args():
 
 
     #train
-    parser.add_argument('--data_path', nargs='?', default='/home/ww/Code/work5/MICRO2Ours/data/', help='Input data path.')
+    parser.add_argument('--data_path', nargs='?', default='', help='Input data path.')
     parser.add_argument('--seed', type=int, default=2022, help='Random seed')
     parser.add_argument('--dataset', nargs='?', default='baby', help='Choose a dataset from {sports, baby, clothing, tiktok, allrecipes}')
     parser.add_argument('--epoch', type=int, default=1000, help='Number of epoch.')  #default: 1000
