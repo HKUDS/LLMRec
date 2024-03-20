@@ -1,0 +1,58 @@
+# experimentName: MNIST               # 用于区分 experiment 的名字，可选项
+# trialCommand: python3 mnist.py      # 注意：如果使用 Windows，请将 "python3" 修改为 "python"
+# trialConcurrency: 2                 # 同时运行 2 个 trial
+# maxTrialNumber: 10                  # 最多生成 10 个 trial
+# maxExperimentDuration: 1h           # 1 小时后停止生成 trial
+# tuner:                              # 配置调优算法
+#    name: TPE
+#    classArgs:                       # 算法特定参数
+#       optimize_mode: maximize
+# trainingService:                    # 配置训练平台
+#    platform: local
+
+
+
+# authorName: default
+# experimentName: mnist_pytorch
+# trialConcurrency: 1
+# maxExecDuration: 100h
+# maxTrialNum: 5
+# #choice: local, remote, pai
+# trainingServicePlatform: local
+# searchSpacePath: search_space.json
+# #choice: true, false
+# useAnnotation: false
+# tuner:
+#   #choice: TPE, Random, Anneal, Evolution, BatchTuner
+#   #SMAC (SMAC should be installed through nnictl)
+#   builtinTunerName: TPE
+#   classArgs:
+#     #choice: maximize, minimize
+#     optimize_mode: maximize
+# trial:
+#   command: python main2_sub_gene_co_weight_AD_0938_fake_click_D_first_auto_modality_2022_2_22_feature_embedding_WGAN_3_2_0959_3_5_BABY_3_13_CL_NNI.py.py
+#   codeDir: .
+#   gpuNum: 1
+
+
+authorName: default
+experimentName: nni_pytorch
+trialConcurrency: 1
+maxExecDuration: 100h
+maxTrialNum: 100
+#choice: local, remote, pai
+trainingServicePlatform: local
+searchSpacePath: search_space.json
+#choice: true, false
+useAnnotation: false
+tuner:
+  #choice: TPE, Random, Anneal, Evolution, BatchTuner, MetisTuner, GPTuner
+  #SMAC (SMAC should be installed through nnictl)
+  builtinTunerName: TPE
+  classArgs:
+    #choice: maximize, minimize
+    optimize_mode: maximize
+trial:
+  command: python main2_sub_gene_co_weight_AD_0938_fake_click_D_first_auto_modality_2022_2_22_feature_embedding_WGAN_3_2_0959_3_5_BABY_3_13_CL_NNI.py
+  codeDir: .
+  gpuNum: 0
