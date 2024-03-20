@@ -29,6 +29,8 @@ LLMRec is a novel framework that enhances recommenders by applying three simple 
 
 ## 🎉 News 📢📢  
 
+- [x] [2024.3.20] 🚀🚀 📢📢📢📢🌹🔥🔥🚀🚀 Because baselines `LATTICE` and `MMSSL` require some minor modifications, we provide code that can be easily run by simply modifying the dataset path.
+
 - [x] [2023.11.3] 🚀🚀 Release the script for constructing the prompt.
 
 - [x] [2023.11.1] 🔥🔥 Release the multi-modal datasets (Netflix, MovieLens), including textual data and visual data.
