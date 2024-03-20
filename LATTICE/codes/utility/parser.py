@@ -3,7 +3,7 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description="")
 
-    parser.add_argument('--data_path', nargs='?', default='/root/autodl-tmp/Datasets/',
+    parser.add_argument('--data_path', nargs='?', default='',
                         help='Input data path.')
     parser.add_argument('--seed', type=int, default=123,
                         help='Random seed')
