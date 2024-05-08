@@ -112,7 +112,6 @@ def test_one_user(x):
 def test_torch(ua_embeddings, ia_embeddings, users_to_test, is_val, drop_flag=False, batch_test_flag=False):
     result = {'precision': np.zeros(len(Ks)), 'recall': np.zeros(len(Ks)), 'ndcg': np.zeros(len(Ks)),
               'hit_ratio': np.zeros(len(Ks)), 'auc': 0.}
-    pool = multiprocessing.Pool(cores)
 
     u_batch_size = BATCH_SIZE * 2
     i_batch_size = BATCH_SIZE
@@ -154,7 +153,7 @@ def test_torch(ua_embeddings, ia_embeddings, users_to_test, is_val, drop_flag=Fa
         rate_batch = rate_batch.detach().cpu().numpy()
         user_batch_rating_uid = zip(rate_batch, user_batch, [is_val] * len(user_batch))
 
-        batch_result = pool.map(test_one_user, user_batch_rating_uid)
+        batch_result = [test_one_user(x) for x in user_batch_rating_uid]
         count += len(batch_result)
 
         for re in batch_result:
@@ -165,5 +164,4 @@ def test_torch(ua_embeddings, ia_embeddings, users_to_test, is_val, drop_flag=Fa
             result['auc'] += re['auc'] / n_test_users
 
     assert count == n_test_users
-    pool.close()
     return result
