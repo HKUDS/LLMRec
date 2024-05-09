@@ -9,23 +9,24 @@ import numpy as np
 from time import time
 
 cores = multiprocessing.cpu_count() // 5
-
+#parsing the arguments
 args = parse_args()
 Ks = eval(args.Ks)
-
+#loading the data
 data_generator = Data(path=args.data_path + args.dataset, batch_size=args.batch_size)
 USR_NUM, ITEM_NUM = data_generator.n_users, data_generator.n_items
 N_TRAIN, N_TEST = data_generator.n_train, data_generator.n_test
 BATCH_SIZE = args.batch_size
-
+#defining the function to test the model
 def ranklist_by_heapq(user_pos_test, test_items, rating, Ks):
     item_score = {}
+    #for each item in the test set
     for i in test_items:
         item_score[i] = rating[i]
-
+    #get the top K items
     K_max = max(Ks)
     K_max_item_score = heapq.nlargest(K_max, item_score, key=item_score.get)
-
+    #get the top K items that are in the test set
     r = []
     for i in K_max_item_score:
         if i in user_pos_test:
@@ -34,27 +35,32 @@ def ranklist_by_heapq(user_pos_test, test_items, rating, Ks):
             r.append(0)
     auc = 0.
     return r, auc
-
+#defining the function to get the AUC
 def get_auc(item_score, user_pos_test):
+    #sort the items based on the score
     item_score = sorted(item_score.items(), key=lambda kv: kv[1])
     item_score.reverse()
     item_sort = [x[0] for x in item_score]
     posterior = [x[1] for x in item_score]
 
     r = []
+    #for each item in the sorted list
     for i in item_sort:
+        #if the item is in the test set
         if i in user_pos_test:
             r.append(1)
         else:
             r.append(0)
+    #get the AUC
     auc = metrics.auc(ground_truth=r, prediction=posterior)
     return auc
-
+#defining the function to get the performance
 def ranklist_by_sorted(user_pos_test, test_items, rating, Ks):
     item_score = {}
+    #for each item in the test set
     for i in test_items:
         item_score[i] = rating[i]
-
+    #get the top K items
     K_max = max(Ks)
     K_max_item_score = heapq.nlargest(K_max, item_score, key=item_score.get)
 
@@ -64,22 +70,24 @@ def ranklist_by_sorted(user_pos_test, test_items, rating, Ks):
             r.append(1)
         else:
             r.append(0)
+    #get the AUC
     auc = get_auc(item_score, user_pos_test)
     return r, auc
-
+#defining the function to get the performance
 def get_performance(user_pos_test, r, auc, Ks):
     precision, recall, ndcg, hit_ratio = [], [], [], []
-
+    #for each K in the list of Ks
     for K in Ks:
+        #get the precision, recall, NDCG, and hit ratio
         precision.append(metrics.precision_at_k(r, K))
         recall.append(metrics.recall_at_k(r, K, len(user_pos_test)))
         ndcg.append(metrics.ndcg_at_k(r, K))
         hit_ratio.append(metrics.hit_at_k(r, K))
-
+    #return the performance
     return {'recall': np.array(recall), 'precision': np.array(precision),
             'ndcg': np.array(ndcg), 'hit_ratio': np.array(hit_ratio), 'auc': auc}
 
-
+#defining the function to test one user
 def test_one_user(x):
     # user u's ratings for user u
     is_val = x[-1]
@@ -96,66 +104,72 @@ def test_one_user(x):
         user_pos_test = data_generator.val_set[u]
     else:
         user_pos_test = data_generator.test_set[u]
-
+    #all items
     all_items = set(range(ITEM_NUM))
 
     test_items = list(all_items - set(training_items))
-
+    #get the top K items
     if args.test_flag == 'part':
+        #get the top K items using heapq
         r, auc = ranklist_by_heapq(user_pos_test, test_items, rating, Ks)
     else:
+        #get the top K items using sorting
         r, auc = ranklist_by_sorted(user_pos_test, test_items, rating, Ks)
 
     return get_performance(user_pos_test, r, auc, Ks)
 
-
+#defining the function to test the model
 def test_torch(ua_embeddings, ia_embeddings, users_to_test, is_val, drop_flag=False, batch_test_flag=False):
+    #initialize the result
     result = {'precision': np.zeros(len(Ks)), 'recall': np.zeros(len(Ks)), 'ndcg': np.zeros(len(Ks)),
               'hit_ratio': np.zeros(len(Ks)), 'auc': 0.}
-
+    #batch size for users
     u_batch_size = BATCH_SIZE * 2
     i_batch_size = BATCH_SIZE
-
+    #number of users to test
     test_users = users_to_test
     n_test_users = len(test_users)
     n_user_batchs = n_test_users // u_batch_size + 1
     count = 0
-
+    #for each batch of users
     for u_batch_id in range(n_user_batchs):
+        #get the users in the batch
         start = u_batch_id * u_batch_size
         end = (u_batch_id + 1) * u_batch_size
         user_batch = test_users[start: end]
         if batch_test_flag:
+            #get the ratings for the batch
             n_item_batchs = ITEM_NUM // i_batch_size + 1
             rate_batch = np.zeros(shape=(len(user_batch), ITEM_NUM))
-
+            #for each batch of items
             i_count = 0
             for i_batch_id in range(n_item_batchs):
+                #get the items in the batch
                 i_start = i_batch_id * i_batch_size
                 i_end = min((i_batch_id + 1) * i_batch_size, ITEM_NUM)
-
+                #get the embeddings for the users and items
                 item_batch = range(i_start, i_end)
                 u_g_embeddings = ua_embeddings[user_batch]
                 i_g_embeddings = ia_embeddings[item_batch]
                 i_rate_batch = torch.matmul(u_g_embeddings, torch.transpose(i_g_embeddings, 0, 1))
-
+                #get the ratings
                 rate_batch[:, i_start: i_end] = i_rate_batch
                 i_count += i_rate_batch.shape[1]
 
             assert i_count == ITEM_NUM
-
+        #if not batch test
         else:
             item_batch = range(ITEM_NUM)
             u_g_embeddings = ua_embeddings[user_batch]
             i_g_embeddings = ia_embeddings[item_batch]
             rate_batch = torch.matmul(u_g_embeddings, torch.transpose(i_g_embeddings, 0, 1))
-
+        #get the ratings
         rate_batch = rate_batch.detach().cpu().numpy()
         user_batch_rating_uid = zip(rate_batch, user_batch, [is_val] * len(user_batch))
-
+        #get the results
         batch_result = [test_one_user(x) for x in user_batch_rating_uid]
         count += len(batch_result)
-
+        #for each result
         for re in batch_result:
             result['precision'] += re['precision'] / n_test_users
             result['recall'] += re['recall'] / n_test_users

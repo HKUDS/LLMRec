@@ -1,6 +1,6 @@
 import argparse
 
-
+# Parse the arguments
 def parse_args():
     parser = argparse.ArgumentParser(description="")
 

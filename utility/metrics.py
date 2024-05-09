@@ -70,28 +70,29 @@ def ndcg_at_k(r, k, method=1):
         return 0.
     return dcg_at_k(r, k, method) / dcg_max
 
-
+# def ndcg_at_k(r, k):
 def recall_at_k(r, k, all_pos_num):
+    #get the recall at k
     r = np.asfarray(r)[:k]
     if all_pos_num == 0:
         return 0
     else:
         return np.sum(r) / all_pos_num
 
-
+#defining the function to get the hit ratio
 def hit_at_k(r, k):
     r = np.array(r)[:k]
     if np.sum(r) > 0:
         return 1.
     else:
         return 0.
-
+#defining the function to get the F1 score
 def F1(pre, rec):
     if pre + rec > 0:
         return (2.0 * pre * rec) / (pre + rec)
     else:
         return 0.
-
+#defining the function to get the AUC
 def auc(ground_truth, prediction):
     try:
         res = roc_auc_score(y_true=ground_truth, y_score=prediction)
