@@ -102,7 +102,7 @@ if os.path.exists(file_path + "augmented_sample_dict"):
 else:
     print(f"The file augmented_sample_dict does not exist.")
     pickle.dump(augmented_sample_dict, open(file_path + 'augmented_sample_dict','wb')) 
-
+#defining the file reading function
 def file_reading():
     augmented_attribute_dict = pickle.load(open(file_path + 'augmented_sample_dict','rb')) 
     return augmented_attribute_dict
@@ -111,6 +111,7 @@ def file_reading():
 def LLM_request(toy_item_attribute, adjacency_list_dict, candidate_indices_dict, index, model_type, augmented_sample_dict):
 
     try:
+        #list of augmented samples
         augmented_sample_dict = file_reading()
     except pickle.UnpicklingError as e:
         print("Error occurred while unpickling:", e) 
@@ -120,6 +121,7 @@ def LLM_request(toy_item_attribute, adjacency_list_dict, candidate_indices_dict,
     else:
         try: 
             print(f"{index}")
+            # make prompting
             prompt = construct_prompting(toy_item_attribute, adjacency_list_dict[index], candidate_indices_dict[index])
             url = "http://llms-se.baidu-int.com:8200/chat/completions"
             headers={
@@ -127,6 +129,7 @@ def LLM_request(toy_item_attribute, adjacency_list_dict, candidate_indices_dict,
                 "Authorization": "Bearer your key"
             
             }
+            #defining the parameters
             params={
                 "model": model_type,
                 "messages": [{"role": "user", "content": prompt}],
@@ -135,18 +138,20 @@ def LLM_request(toy_item_attribute, adjacency_list_dict, candidate_indices_dict,
                 "stream": False, 
                 "top_p": 0.1
             }
-
+            # params = {
             response = requests.post(url=url, headers=headers,json=params)
             message = response.json()
-
+            #response
             content = message['choices'][0]['message']['content']
             print(f"content: {content}, model_type: {model_type}")
+            #get the samples
             samples = content.split("::")
             pos_sample = int(samples[0])
             neg_sample = int(samples[1])
             augmented_sample_dict[index] = {}
             augmented_sample_dict[index][0] = pos_sample
             augmented_sample_dict[index][1] = neg_sample
+            #generate the pickle file
             pickle.dump(augmented_sample_dict, open(file_path + 'augmented_sample_dict','wb'))
 
         # except ValueError as e:

@@ -177,7 +177,7 @@ def LLM_request(toy_item_attribute, indices, model_type, augmented_attribute_dic
                 # "Content-Type": "application/json",
                 "Authorization": "Bearer your key"
             }
-
+            #define the params
             params={
                 "model": "text-davinci-003",
                 "prompt": prompt,
@@ -185,10 +185,10 @@ def LLM_request(toy_item_attribute, indices, model_type, augmented_attribute_dic
                 "temperature": 0.6,
                 "stream": False,
             } 
-
+            #send request
             response = requests.post(url=url, headers=headers,json=params)
             message = response.json()
-
+            #get the content
             content = message['choices'][0]['text']
             print(f"content: {content}, model_type: {model_type}")
 
@@ -229,6 +229,7 @@ def LLM_request(toy_item_attribute, indices, model_type, augmented_attribute_dic
             if error_cnt==5:
                 return 1
             # print(content)
+            #request again
             LLM_request(toy_item_attribute, indices, "gpt-3.5-turbo-0613", augmented_attribute_dict, error_cnt)
         except IndexError as ke:
             print("IndexError error occurred while accessing the response:", str(ke))
@@ -246,6 +247,7 @@ def LLM_request(toy_item_attribute, indices, model_type, augmented_attribute_dic
             if error_cnt==5:
                 return 1
             # print(content)
+            #request again
             LLM_request(toy_item_attribute, indices, "gpt-3.5-turbo-0613", augmented_attribute_dict, error_cnt)
         return 1
 
@@ -265,22 +267,24 @@ def LLM_request(toy_augmented_item_attribute, indices, model_type, augmented_att
         else:
             try: 
                 print(f"{indices}")
+                #generate prompt
                 # prompt = construct_prompting(toy_item_attribute, indices)
                 url = "https://api.openai.com/v1/embeddings"
                 headers={
                     # "Content-Type": "application/json",
                     "Authorization": "Bearer your key"
                 }
+                #define the params
                 params={
                 "model": "text-embedding-ada-002",
                 "input": toy_augmented_item_attribute[value][indices].values[0]
                 }
-
+                #send request
                 response = requests.post(url=url, headers=headers,json=params)
                 message = response.json()
 
                 content = message['data'][0]['embedding']
-
+                #set the content to the augmented_atttribute_embedding_dict
                 augmented_atttribute_embedding_dict[value][indices[0]] = content
                 # pickle.dump(augmented_sample_dict, open('augmented_sample_dict','wb'))
                 pickle.dump(augmented_atttribute_embedding_dict, open(file_path + 'augmented_atttribute_embedding_dict','wb'))
@@ -316,8 +320,9 @@ def LLM_request(toy_augmented_item_attribute, indices, model_type, augmented_att
 
 
 
-
+#defining the function to read the file
 def file_reading():
+    #read the augmented_attribute_dict
     augmented_atttribute_embedding_dict = pickle.load(open(file_path + 'augmented_atttribute_embedding_dict','rb')) 
     return augmented_atttribute_embedding_dict
 
@@ -341,16 +346,16 @@ def LLM_request(toy_augmented_item_attribute, indices, model_type, augmented_att
                 }
                 ### chatgpt #############################################################################################################################
 
-
+                #define the params
                 params={
                 "model": "text-embedding-ada-002",
                 "input": str(toy_augmented_item_attribute[value][indices].values[0])
                 }
                 response = requests.post(url=url, headers=headers,json=params)
                 message = response.json()
-
+                #response
                 content = message['data'][0]['embedding']
-
+                #set the content to the augmented_atttribute_embedding_dict
                 augmented_atttribute_embedding_dict[value][indices[0]] = content
                 pickle.dump(augmented_atttribute_embedding_dict, open(file_path + file_name,'wb'))
             

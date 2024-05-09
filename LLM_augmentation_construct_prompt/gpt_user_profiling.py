@@ -135,7 +135,9 @@ g_model_type = "gpt-3.5-turbo-0613"
 
 
 # toy_item_attribute, adjacency_list_dict, index, "gpt-4", augmented_user_profiling_dict
+#define the function to read the file
 def file_reading():
+    #read the file
     augmented_user_profiling_dict = pickle.load(open(file_path + 'augmented_user_profiling_dict','rb')) 
     return augmented_user_profiling_dict
 ## baidu user profile generate
@@ -153,11 +155,13 @@ def LLM_request(toy_item_attribute, adjacency_list_dict, index, model_type, _, e
     # else:
         # try: 
     print(f"{index}")
+    #send the request
     prompt = construct_prompting(toy_item_attribute, adjacency_list_dict[index])
     url = "http://llms-se.baidu-int.com:8200/chat/completions"
     headers={
         # "Authorization": "Bearer your key"
     }
+    #define the parameters and prompt
     prompt = "Please output the following infomation of user, output format:\n{\'age\':age, \'gender\':gender, \'liked genre\':liked genre, \'disliked genre\':disliked genre, \'liked directors\':liked directors, \'country\':country\, 'language\':language}\nPlease do not fill in \'unknown\', but make an educated guess based on the available information and fill in the specific content.\nplease output only the content in format above, but no other thing else, no reasoning, no analysis, no Chinese. Reiterating once again!! Please only output the content after \"output format: \", and do not include any other content such as introduction or acknowledgments.\n\n" + "User history:\n" + "[332]" + "title: Heart and Souls (1993), " + "genre: Comedy|Fantasy\n" + "[364]" + "title: Men with Brooms (2002), " + "genre: Comedy|Drama|Romance\n" + "You are required to generate user profile based on the history of user, that each movie with title, year, genre.\n"
     params={
         "model": model_type,
@@ -167,6 +171,7 @@ def LLM_request(toy_item_attribute, adjacency_list_dict, index, model_type, _, e
         "stream": False, 
         "top_p": 0.1
     }
+    #send the request
     response = requests.post(url=url, headers=headers,json=params)
     message = response.json()
     content = message['choices'][0]['message']['content']
